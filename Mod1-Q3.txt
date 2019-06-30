@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Q.An Electricity Company charges people based on number of units used.Input the number of units 
+  and calculate the bill amount and print using C.
+  
+        No. of Units Rate/amount
+        Upto 100 units RS. 1.80/- unit
+        OtherWise Rs 3.50/- extra unit
+
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int numberOfUnits; 
+    float totalBill;
+    
+    printf("Enter Current Units :");
+    scanf("%d", &numberOfUnits);
+    
+    if(numberOfUnits > 100){
+        totalBill = ((numberOfUnits - 100) * 3.50) + (100 * 1.80);
+    }else{
+        totalBill = numberOfUnits * 1.80;
+    }
+    
+    printf("Your Total Bill is %f", totalBill);
+
+    return 0;
+}
