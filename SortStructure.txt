@@ -1,0 +1,52 @@
+/******************************************************************************
+
+Q. Sorting A Structure Of Students BAsed On their Marks
+
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+struct Student{
+    char name[15];
+    int rollNo;
+    int marks;
+}st[3], temp;
+
+int main()
+{
+    int i , j; //For initialising for loop
+    
+    //Collecting Values to Store the Structure Of 3 Students
+    printf("Enter the Details Of the Students\n");
+    for(i=0; i<3; i++){
+        printf("Enter Name :");
+        scanf("%s", st[i].name);
+        printf("Enter RollNo :");
+        scanf("%d", st[i].rollNo);
+        printf("Enter Marks :");
+        scanf("%d", st[i].marks);
+    }
+    
+    //Sorting the Struct Students on the Basis of Marks
+    for(i=0; i<3; i++){
+        for(j=i+1; j<3; j++){
+            if(st[i].marks < st[j].marks){
+                temp = st[i];
+                st[i] = st[j];
+                st[j] = temp;
+            }
+        }
+    }
+    
+    
+    //Printing Out the new Sorted Structure
+    for(i=0; i<3; i++){
+        printf("Name : %s", st[i].name);
+        printf("Enter RollNo : %d", st[i].rollNo);
+        printf("Enter Marks : %d", st[i].marks);
+    }
+    
+    
+    return 0;
+}
